@@ -6,5 +6,6 @@ void test_countSort(int, int, int);
 void test_selectionSort(int, int, int);
 void test_insertionSort(int, int, int);
 void test_mergeSort(int, int, int);
+void test_quickSort(int, int, int);
 
 #endif /*_testsorts_h_*/

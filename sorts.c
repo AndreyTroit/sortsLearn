@@ -48,10 +48,11 @@ void selectionSort(int* ar, int size){
         	}
     	}
 }
-/*
+
 void countSort(int* ar, int size, int minel, int maxel){
         int numMass[maxel-minel];
-        for(int i = 0; i < maxel-minel; i++){
+	fillNu(numMass, maxel-minel, 0);
+        for(int i = 0; i <= maxel-minel; i++){
                 for(int j = 0; j < size; j++){
                         if(ar[j] == i + minel){
                                 numMass[i] += 1;
@@ -66,7 +67,8 @@ void countSort(int* ar, int size, int minel, int maxel){
 		}
 	}
 }
-*/
+
+/*
 void countSort(int* ar, int size, int maxel){
 	int numMass[maxel];
 	for (int i = 0; i < maxel; i++){
@@ -84,6 +86,7 @@ void countSort(int* ar, int size, int maxel){
         	}
     	}
 }
+*/
 
 static void merge(int* ar, int size, int central) {
     int left = 0;
@@ -124,4 +127,33 @@ void mergeSort(int* ar, int size) {
     mergeSort(&ar[size >> 1], size - (size >> 1));
 
     merge(ar, size, size >> 1);
+}
+
+void quickSort(int* ar, int size) {
+    int left = 0;
+    int right = size - 1;
+    int pivot = ar[size >> 1];
+
+    while(left <= right) {
+        while(ar[left] < pivot) {
+            left++;
+        }
+
+        while (ar[right] > pivot) {
+            right--;
+        }
+
+        if (left <= right) {
+            swap(ar[right], ar[left]);
+            right--;
+            left++;
+        }
+    }
+    if (right > 0) {
+        quickSort(&ar[0], right + 1);
+    }
+
+    if (left < size) {
+        quickSort(&ar[left], size - left);
+    }
 }

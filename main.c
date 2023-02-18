@@ -15,5 +15,6 @@ int main(){
 	test_selectionSort(size, minel, maxel);
 	test_insertionSort(size, minel, maxel);
 	test_mergeSort(size, minel, maxel);
+	test_quickSort(size, minel, maxel);
 	return 0;
 }

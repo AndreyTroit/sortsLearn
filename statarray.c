@@ -41,6 +41,7 @@ int binSearch(int* ar, int size, int key){
 
 int typeSort(int* ar, int size){
 	int count = 0;
+	int temp = 0;
 	for (int i = 0; i < (size - 1); i++){
 		if (ar[i] < ar[i+1]){
 			count += 1;
@@ -48,11 +49,14 @@ int typeSort(int* ar, int size){
 		if (ar[i] > ar[i+1]){
 			count += 2;
 		}
+		if (ar[i] == ar[i+1]){
+			temp++;
+		}
 	}
-	if (count == size-1){
+	if (count == size-temp-1){
 		return 1;
 	}
-	if (count == (size-1) * 2){
+	if (count == (size-temp-1) * 2){
 		return 2;
 	}
 	return 0;
