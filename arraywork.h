@@ -1,6 +1,7 @@
 #ifndef _arraywork_h_
 #define _arraywork_h_
 
+#include <iostream>
 #include <time.h>
 
 void swap(int&, int&);
