@@ -28,15 +28,13 @@ int getMaxEl(int* ar, int size){
 
 int binSearch(int* ar, int size, int key){
     int center = size / 2;
-    if (ar[center] == key){
-        std::cout << key << std::endl;
-    }
     if (ar[center] > key){
         return binSearch(&ar[0], center, key);
     }
     if (ar[center] < key){
         return binSearch(&ar[center], size - 1, key);
     }
+    return key;
 }
 
 int typeSort(int* ar, int size){
