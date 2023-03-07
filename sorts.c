@@ -2,9 +2,8 @@
 #include "arraywork.h"
 #include "statarray.h"
 
-void bubbleSort(int* ar, int size){
-        for(int i = 0; i < size; i++){
-
+void bubbleSort(int* ar, int size) {
+	for(int i = 0; i < size; i++) {
                 for(int j = 0; j < size - 1 - i; j++){
                         if (ar[j] > ar[j+1]){
                                 swap(ar[j], ar[j+1]);
@@ -17,13 +16,14 @@ void insertionSort(int* ar, int size){
         for(int i = 1; i < size; i++){
                 int el = ar[i];
                 int j = i-1;
-                while(ar[j] > el && j >= 0){
+                while(ar[j] > el && j >= 0) {
                         ar[j + 1] = ar[j];
                         j--;
                 }
                 ar[j + 1] = el;
         }
 }
+комментированный код плохо.... его надо всегда удалять перед заливкой в репозиторий!!!
 /*
 void selectionSort(int* ar, int size){
 	int maxind;
@@ -49,9 +49,13 @@ void selectionSort(int* ar, int size){
     	}
 }
 
+//любая сортировка должна принимать только два параметра 
+//int* ar, int size
+//в не которых случаях, может принимать третий параметр, для определения
+//направления сортировки... эту функцию надо переделать
 void countSort(int* ar, int size, int minel, int maxel){
         int numMass[maxel-minel];
-	fillNu(numMass, maxel-minel, 0);
+		fillNu(numMass, maxel-minel, 0); //не очень понятно что делает эта функция....
         for(int i = 0; i <= maxel-minel; i++){
                 for(int j = 0; j < size; j++){
                         if(ar[j] == i + minel){
