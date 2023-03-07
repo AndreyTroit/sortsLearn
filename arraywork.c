@@ -23,6 +23,8 @@ void showEl(int* ar, int size){
 }
  
 void fillNu(int* ar, int size, int el){
+	много раз показывал, что можно так
+		memset(ar, el, size * sizeof(int));
 	for(int i = 0; i < size; i++){
 		ar[i] = el;
 	}
